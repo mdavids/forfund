@@ -2,8 +2,6 @@
 // ForFun Daemon header file
 //
 
-// TODO: only put them here if they are global?
-
 // forfunc.c
 #define RUNNING_DIR "/tmp"
 #define PID_FILE "/tmp/forfund.pid"

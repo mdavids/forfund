@@ -40,7 +40,7 @@ daemonize (void)
   debug_print ("    [DEBUG] daemonizing...");
   if (daemon (1, NOCLOSE))
     {
-      perror ("[ERROR] could not daemonize");	// TODO: try to enforce, so we can test the perror (but how?)
+      perror ("[ERROR] could not daemonize");
       exit (EXIT_FAILURE);
     }
   // Forking went well
@@ -138,7 +138,6 @@ create_pid (void)
     {
       perror ("[ERROR] Could not close pid file");
       syslog (LOG_ERR, "could not close pidfile '%s'", PID_FILE);
-      // TODO exit, or move on?
     }
 }
 
@@ -178,7 +177,6 @@ log_message (char *message)
     }
   debug_print
     ("    [DEBUG] message to logfile was send and logfile was closed again");
-  // TODO: return 0 and 1's here and there?    
 }
 
 /********************  SIG HANDLER  ********************************/

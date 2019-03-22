@@ -20,7 +20,7 @@ main (int argc, char *argv[])
 
 /********************  GET_OPTIONS  ********************************/
   while ((opt = getopt (argc, argv, "dfhip:")) != -1)
-    // TODO: dynamic userid? log and pid file directories maybe?
+    // TODO: userid-option? And log and pid file directories options?
     //       also, for sure, a timer: run for max xx seconds or xx connections or something
     {
       switch (opt)
@@ -95,21 +95,20 @@ main (int argc, char *argv[])
   // print some information (after all this is a testing and learning program)
   printf ("Starting like this: [uid: %d - pid: %d - parent pid: %d]\n",
 	  getuid (), getpid (), getppid ());
-// TODO: make all of these stepts optional as commandline parameter
-  // daemonize
 
+  // daemonize
   if (do_daemon)
     {
-      daemonize ();		// TODO: make configurable as command line parameter
+      daemonize ();		
     }
   // start the echoserver (has also the init() )
-  echoserver_init ();		// initialize the echoserver TODO: portnumber as paramerter
+  echoserver_init ();
   // change uid, change dir, open syslog, create pid file
   change_userid ();
   // Send a first message to /var/log/forfund.log
   // But only after we transfered to the proper userid
   log_message ("Startup");
-  change_dir ();		// TODO before log_message maybe? Should not be necessary, see forfun.h
+  change_dir ();		
   open_syslog ();
   if (do_pid)
     {
