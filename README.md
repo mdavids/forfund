@@ -1,2 +1,3 @@
 # forfund
-Testing with Debian packaging and stuff like that
+Testing with Debian packaging and stuff like that.
+
