@@ -1,0 +1,26 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+#
+# TODO can we put 'clean'-rules here?
+#      https://www.debian.org/doc/manuals/maint-guide/build.en.html
+#      Maybe it doesn't work that way, 'cause 'fakeroot debian/rules binary' also simply works
+#      See: https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#customrules
+
+# hardening options at build time
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+# Not sure if this does anything useful
+
+## do not start daemon by default: force user to configure
+#override_dh_installinit:
+#	dh_installinit --no-start
+# TODO: not sure if this does actually work
+#       test is further
+
+%:
+	dh $@
+#	dh $@ --with systemd
+
+#       what does --with systemd do precisely?
+#       (test it without and see if systemd-stuff is invoked just as it was with this option enabled)
+#       tested: didn't see a difference at first glance

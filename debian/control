@@ -1,0 +1,14 @@
+Source: forfund
+Section: misc
+Priority: optional
+Maintainer: CulTrix Packaging for ForFun.NET Labs <hostmaster+cultrixpackaging@forfun.net>
+Build-Depends: debhelper (>= 10)
+Standards-Version: 4.1.2
+Homepage: https://github.com/mdavids/forfund
+
+Package: forfund
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: ForFun Labs test, can safely be ignored.
+ This package is intended for some internal testing by ForFun Labs.
+ You can safely ignore it.

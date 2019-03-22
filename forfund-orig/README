@@ -1,0 +1,19 @@
+ABOUT
+-----
+
+This is a ForFun.NET Labs test environment intended to learn about
+autotools, build-essential, systemd and more.
+
+The utility does noting useful.
+
+LICENSING
+---------
+
+This code is open source with a BSD license.
+
+Please see "COPYING" for the full license details.
+
+TODO
+----
+
+-- Many things ;-)

@@ -1,0 +1,27 @@
+.\" This manpage was written by Marco Davids <mdavids@forfun.net>
+.\" for forfund.
+.TH "FORFUNTST" "1" "March 2019" "" "User Commands"
+.SH "NAME"
+.LP
+forfund \- a demonstration program without any serious use
+.SH "SYNOPSIS"
+.LP
+\fBforfund 
+.SH "DESCRIPTION"
+.LP
+\fIforfund\fR does nothing and takes no command-line arguments.
+.SH "COMMANDS"
+.LP
+\fIforfund\fR accepts no commands.
+.SH "OPTIONS"
+.LP
+None.
+.LP
+.SH "EXAMPLES"
+.LP
+To invoke
+.I forfund
+:
+.IP
+$ forfund
+.LP

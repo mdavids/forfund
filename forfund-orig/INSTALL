@@ -1,0 +1,15 @@
+./configure
+make
+
+Or, when there's is only the c-source, man-page and Makefile.am and configure.ac:
+
+autoreconf --install
+./configure
+make
+make check
+make install
+
+make dist
+(or make distcheck)
+
+See https://www.gnu.org/software/automake/manual/automake.html#Standard-Targets
