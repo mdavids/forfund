@@ -70,8 +70,6 @@ echoserver_init (void)
       exit (EXIT_FAILURE);
     }
 
-  //accept the incoming connection  
-  addrlen = sizeof (address);
   debug_print ("    [DEBUG] end echoserver init");
   // TODO: (sys)logging as well?
 }
@@ -80,6 +78,8 @@ void
 echoserver_run (void)
 {
   debug_print ("    [DEBUG] start echoserver run loop");
+  //accept the incoming connection  
+  addrlen = sizeof (address);
   while (TRUE)
     {
       //clear the socket set  
