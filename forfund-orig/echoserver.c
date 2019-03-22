@@ -54,7 +54,7 @@ echoserver_init (void)
   address.sin6_addr = in6addr_any;
   address.sin6_port = htons (port_number);
 
-  //bind the socket to localhost port port_number;
+  //bind the socket to port_number;
   if (bind (master_socket, (struct sockaddr *) &address, sizeof (address)) <
       0)
     {
@@ -108,6 +108,7 @@ echoserver_run (void)
       //so wait indefinitely  
       activity = select (max_sd + 1, &readfds, NULL, NULL, NULL);
 
+
       if ((activity < 0) && (errno != EINTR))
 	{
 	  printf ("select error");
@@ -129,7 +130,7 @@ echoserver_run (void)
 	  //TODO turn into debug_print() or...?
 	  inet_ntop (AF_INET6, &address.sin6_addr, addr, INET6_ADDRSTRLEN);
 	  sprintf (str,
-		   "New connection , socket fd is %d , ip is : %s , port : %d",
+		   "New connection, socket fd is %d, remote ip is: %s, remote port is: %d",
 		   new_socket, addr, ntohs (address.sin6_port));
 	  log_message (str);
 	  puts (str);

@@ -15,7 +15,8 @@
 
 
 int pid;			// forfund.c and forfunc.c
-char str[80];			// used in sprintf() in forfunc.c
+char str[1024];			// used in sprintf() in forfunc.c ** DANGERZONE **
+                                // Don't make it too short, because we don't check on possible overflow
 
 int opt;			// forfund.c options
 int do_daemon;
