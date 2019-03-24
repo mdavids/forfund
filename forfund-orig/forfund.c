@@ -14,14 +14,15 @@ main (int argc, char *argv[])
 {
 
   port_number = PORT;
+  uid_number = RUNAS_UID;
   do_daemon = 1;
 
   puts ("This is " PACKAGE_STRING ".");
 
 /********************  GET_OPTIONS  ********************************/
-  while ((opt = getopt (argc, argv, "dfhip:")) != -1)
-    // TODO: userid-option? And log and pid file directories options?
-    //       also, for sure, a timer: run for max xx seconds or xx connections or something
+  while ((opt = getopt (argc, argv, "dfhip:u:")) != -1)
+    // TODO: userid-option (maybe also group id). And log and pid file directories options?
+    //       A timer: run for max xx seconds or xx connections or something
     {
       switch (opt)
 	{
@@ -56,6 +57,25 @@ main (int argc, char *argv[])
 	      debug_print (str);
 	    }
 	  break;
+	case 'u':
+	  if (!optarg || (atoi (optarg) > 0 && atoi (optarg) <= 65535))
+	    {
+	      uid_number = (uid_t) atoi (optarg);
+	    }
+	  else
+	    {
+	      printf
+		("[ERROR] missing or invalid UID number with -u option.\n");
+	      exit (EXIT_FAILURE);
+	    }
+	  if (uid_number != RUNAS_UID)
+	    {
+	      sprintf (str,
+		       "    [DEBUG] using UID number %d instead of default %d",
+		       port_number, RUNAS_UID);
+	      debug_print (str);
+	    }
+	  break;	  
 	case ':':
 	  printf ("option needs a value\n");
 	  break;

@@ -23,6 +23,7 @@ int do_daemon;
 int do_debug;
 int do_pid;
 int port_number;
+uid_t uid_number;
 // declarations of functions
 void usage (void);
 int debug_print (const char *debugmsg);

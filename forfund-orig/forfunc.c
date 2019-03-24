@@ -55,13 +55,13 @@ void
 change_userid (void)
 {
   // Change uid
-  if (getuid () != RUNAS_UID)
+  if (getuid () != uid_number)
     {
       debug_print ("    [DEBUG] attempt to change uid");
-      if (setuid (RUNAS_UID) != 0)
+      if (setuid (uid_number) != 0)
 	{
 	  sprintf (str, "[ERROR] Cannot fulfill the setuid(%d) request",
-		   RUNAS_UID);
+		   uid_number);
 	  perror (str);
 	  // Will print out explenation, like: [ERROR] Cannot fulfill the setuid(1000) request.: Operation not permitted
 	  exit (EXIT_FAILURE);
