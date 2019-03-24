@@ -58,7 +58,7 @@ main (int argc, char *argv[])
 	    }
 	  break;
 	case 'u':
-	  if (!optarg || (atoi (optarg) > 0 && atoi (optarg) <= 65535))
+	  if (!optarg || (atoi (optarg) >= 0 && atoi (optarg) <= 65535))
 	    {
 	      uid_number = (uid_t) atoi (optarg);
 	    }
