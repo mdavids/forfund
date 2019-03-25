@@ -155,7 +155,6 @@ echoserver_run (void)
 		{
 		  client_socket[i] = new_socket;
 		  printf ("Adding to list of sockets as %d\n", i);
-
 		  break;
 		}
 	    }
