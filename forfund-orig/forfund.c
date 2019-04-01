@@ -21,8 +21,9 @@ main (int argc, char *argv[])
 
 /********************  GET_OPTIONS  ********************************/
   while ((opt = getopt (argc, argv, "dfhip:u:")) != -1)
-    // TODO: userid-option (maybe also group id). And log and pid file directories options?
-    //       A timer: run for max xx seconds or xx connections or something
+    // TODO (maybe): group id. 
+    //               And log and pid file directories options?
+    //               A timer: run for max xx seconds or xx connections or something
     {
       switch (opt)
 	{
